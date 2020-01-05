@@ -37,7 +37,7 @@ pub enum Register {
     XL_REF          = 0x3A,
     XH_REF          = 0x3B,
     YL_REF          = 0x3C,
-    YL_REF          = 0x3D,
+    YH_REF          = 0x3D,
     ZL_REF          = 0x3E,
     ZH_REF          = 0x3F,
 }
