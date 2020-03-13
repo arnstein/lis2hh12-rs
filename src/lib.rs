@@ -105,7 +105,7 @@ where
             .and(Ok(data[0]))
     }
 
-    fn read_accel_bytes(&mut self) -> Result<[u8;6], Error<E>> {
+    pub fn read_accel_bytes(&mut self) -> Result<[u8;6], Error<E>> {
         let mut data = [0u8;6];
         self.i2c
             .write_read(self.address, &[Register::OUT_X_L.addr() | 0x80], &mut data)
@@ -118,6 +118,14 @@ where
             return Err(Error::WriteToReadOnly);
         }
         self.i2c.write(self.address, &[register.addr(), value]).map_err(Error::I2C)
+    }
+
+    pub fn get_acceleration(&mut self) -> Result<I16x3, Error<E>> {
+       let accel_bytes = self.read_accel_bytes()?;
+       let x = i16::from_le_bytes(accel_bytes[0..2].try_into().unwrap());
+       let y = i16::from_le_bytes(accel_bytes[2..4].try_into().unwrap());
+       let z = i16::from_le_bytes(accel_bytes[4..6].try_into().unwrap());
+       Ok(I16x3::new(x, y, z))
     }
 }
 

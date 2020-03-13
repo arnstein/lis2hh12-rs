@@ -9,5 +9,6 @@ keywords = ["embedded-hal-driver", "accelerometer"]
 repository = "https://github.com/arnstein/lis2hh12-rs"
 
 [dependencies]
-embedded-hal = "~0.2"
+embedded-hal = "0.2.3"
 accelerometer = { version = "~0.6", features = ["orientation"] }
+linux-embedded-hal = "0.3.0"
