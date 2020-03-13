@@ -11,6 +11,7 @@ keywords = ["embedded-hal-driver", "accelerometer"]
 
 include = [
     "src/lib.rs",
+    "src/register.rs",
     "Cargo.toml",
     "README.md"
     ]
