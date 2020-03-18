@@ -108,7 +108,7 @@ where
     pub fn read_accel_bytes(&mut self) -> Result<[u8;6], Error<E>> {
         let mut data = [0u8;6];
         self.i2c
-            .write_read(self.address, &[Register::OUT_X_L.addr() | 0x80], &mut data)
+            .write_read(self.address, &[Register::OUT_X_L.addr()], &mut data)
             .map_err(Error::I2C)
             .and(Ok(data))
     }
