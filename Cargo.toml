@@ -4,9 +4,10 @@ description = "An embedded-hal driver for the LIS2HH12 accelerometer that implem
 documentation = "https://docs.rs/lis2hh12-rs"
 repository = "https://github.com/arnstein/lis2hh12-rs"
 license = "MIT"
-version = "0.2.0"
+version = "1.0.0"
 authors = ["Arnstein Kleven <arnsteinkleven@gmail.com>"]
-edition = "2018"
+edition = "2021"
+rust-version = "1.75"
 keywords = ["embedded-hal-driver", "accelerometer"]
 
 include = [
@@ -17,5 +18,5 @@ include = [
     ]
 
 [dependencies]
-embedded-hal = "0.2.3"
-accelerometer = { version = "~0.6", features = ["orientation"] }
+embedded-hal = "1.0.0"
+accelerometer = "0.12.0"
