@@ -14,7 +14,7 @@ Add the dependency to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-lis2hh12-rs = "0.2"
+lis2hh12-rs = "1.0"
 ```
 
 Create a driver instance with any `embedded_hal::i2c::I2c` implementation:
